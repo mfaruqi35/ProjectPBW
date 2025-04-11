@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Welcome to Home Page!</h1>
-    <img src="/images/logo.png" alt="Logo" width="200">
+    <h1>KONTHOL</h1>
 @endsection

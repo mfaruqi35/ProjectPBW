@@ -9,8 +9,9 @@
     </div>
 
     <div class="Second-Logo">
-        <img src="{{ asset('image/letter.png') }}" alt="Logo">
-        <img src="{{ asset('image/letter.png') }}" alt="Logo">
+        <img class="Icon" src="{{ asset('image/surat.png') }}" alt="Logo" >
+        <img class="Icon" src="{{ asset('image/profile.png') }}" alt="Logo"
+       >
     </div>
     
 </nav>
