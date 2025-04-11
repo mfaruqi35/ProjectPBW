@@ -1,0 +1,39 @@
+
+
+nav {
+    background-color: var(--Primary-Color);
+    width: 100vw;
+    height: 80px;
+    color: white;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    width: 300px;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.Logo {
+    height: 100%;
+    border: 3px solid white;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Second-Logo {
+    height: 100%;
+    border: 3px solid white;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
