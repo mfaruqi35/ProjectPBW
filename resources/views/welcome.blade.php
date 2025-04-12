@@ -44,28 +44,61 @@
             </div>
         </div>
       <div class="h-[80vh]" id="features">
-        <div class="flex w-full h-[70vh] p-1 flex-col">
-            <div class="h-[15vh] w-full pl-10">
-                <h1 class="font-[Kanit] font-bold text-[50px]">Key Features</h1>
-                <p class="font-[Kanit] font-light">Explore the essential features that make Notudo the ultimate project management tool.</p>
+        <div class="flex w-full h-[70vh] p-1 pt-5 flex-col">
+            <div class="h-[15vh] w-full py-5 px-10 flex justify-center">
+                <h1 class="font-[Kanit] font-bold text-4xl">What You Can Do with <span class="text-[#1868DB]">Notudo</span></h1>
             </div>
-            <div class="py-2 px-3 flex flex-row justify-center gap-5 h-full flex-1">
+            <div class="py-5 px-3 flex flex-row justify-center gap-5 h-full flex-1">
                 <div class="border-1 border-gray-300 group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300">
                     <h1 class="font-[Kanit] font-medium text-xl">Task Management</h1>
                     <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Effortlessly organize and prioritize tasks for seamless project execution.</p>
+                    <img src="assets/fitur1.png" alt="">
                 </div>
                 <div class="border-1 border-gray-300  group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300">
                     <h1 class="font-[Kanit] font-medium text-xl">Collaboration Tools</h1>
                     <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Enhance teamwork and communication with powerful collaboration features.</p>
+                    <img src="assets/fitur2.png" alt="">
                 </div>
                 <div class="border-1 border-gray-300 group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300 flex flex-col">
                     <h1 class="font-[Kanit] font-medium text-xl">Project Tracking</h1>
                     <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Track progress, milestones, and deadlines with precision for successful project management.</p>
+                    <img src="assets/project-tracking.png" alt="">
                 </div>
             </div>
         </div>
       </div>
     </section>
+    <section class="bg-white py-10 px-4 md:px-10">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold font-[Kanit] text-[#1846db] mb-12">
+            How It <span class="text-gray-800">Works</span>
+          </h2>
+      
+          <div class="grid md:grid-cols-3 gap-10 text-left">
+            <!-- Step 1 -->
+            <div class="bg-blue-50 rounded-lg shadow-md p-6 transition hover:-translate-y-1 hover:shadow-xl duration-300">
+              <div class="text-4xl text-blue-700 font-bold mb-4">1</div>
+              <h3 class="text-xl font-semibold font-[Kanit] mb-2">Sign up & Login</h3>
+              <p class="text-gray-600">Create your Notudo account to kickstart your project management journey. It's fast, simple, and free!</p>
+            </div>
+      
+            <!-- Step 2 -->
+            <div class="bg-blue-50 rounded-lg shadow-md p-6 transition hover:-translate-y-1 hover:shadow-xl duration-300">
+              <div class="text-4xl text-blue-700 font-bold mb-4">2</div>
+              <h3 class="text-xl font-semibold font-[Kanit] mb-2">Create Your Project</h3>
+              <p class="text-gray-600">Start organizing by creating a new project. Set up your to-do list and invite team members to collaborate.</p>
+            </div>
+      
+            <!-- Step 3 -->
+            <div class="bg-blue-50 rounded-lg shadow-md p-6 transition hover:-translate-y-1 hover:shadow-xl duration-300">
+              <div class="text-4xl text-blue-700 font-bold mb-4">3</div>
+              <h3 class="text-xl font-semibold font-[Kanit] mb-2">Manage & Track Progress</h3>
+              <p class="text-gray-600">Easily track tasks, schedules, and your team’s progress in one visual and efficient dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     <footer class="bg-gray-900 text-white p-6 text-sm font-[Kanit]" id="about">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
