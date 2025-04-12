@@ -6,27 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
 </head>
-<body class="flex justify-center flex-col overflow-x-hidden bg-[#F1F2F4]">
-    <x-header/>
+<body class="flex flex-col bg-[#F1F2F4]">
+    <header class="bg-white grid grid-rows-1 grid-cols-3 shadow-2xl fixed w-full z-999 px-5">
+        <div class="flex items-center">
+            <h1 class="font-[Kanit] font-bold text-[3rem] text-[#1868DB]">Notudo</h1>
+        </div>
+        <div class="flex justify-center items-center gap-20">
+            <a href="#features">
+                <h1 class="font-[Kanit] font-light text-[20px] text-black">Features</h1>
+            </a>
+            <a href="#about">
+                <h1 class="font-[Kanit] font-light text-[20px] text-black">About</h1>
+            </a>
+        </div>
+        <div class="flex items-center justify-end">
+            <a href="{{ route('login') }}">
+                <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db]">Sign In</button>
+            </a>
+        </div>
+    </header>
     <section>
-        <div class="absolute bg-[url(/public/assets/background.png)] h-[60vh] w-full z-[-1] bg-center bg-no-repeat opacity-40">
+        <div class="absolute bg-[url(/public/assets/banner4.jpg)] h-[80vh] w-full z-[-1] bg-center bg-no-repeat opacity-30">
         </div>
         <div class="grid grid-cols-1 grid-rows-1">
-            <div class="h-[60vh] flex justify-center flex-col items-center gap-3">
+            <div class="h-[80vh] flex justify-center flex-col items-center gap-3">
                 <div class="text-5xl">
                     <h1 class="font-[Kanit]">Welcome to <span class="font-[Kanit] font-bold text-[#1868DB]">Notudo</span></h1>
                 </div>
                 <div class="w-[30vw] text-center">
                     <h1 class="font-[Kanit] font-light">Simplify your project with style and ease.</h1>
                 </div>
-                <a href="{{ route('login') }}">
+                <a href="{{ route('register') }}">
                     <button class="btn-mulai">
                         Get Started
                     </button>
                 </a>
             </div>
         </div>
-      <div class="h-[80vh]">
+      <div class="h-[80vh]" id="features">
         <div class="flex w-full h-[70vh] p-1 flex-col">
             <div class="h-[15vh] w-full pl-10">
                 <h1 class="font-[Kanit] font-bold text-[50px]">Key Features</h1>
@@ -49,6 +66,31 @@
         </div>
       </div>
     </section>
-    <x-footer/>
+    <footer class="bg-gray-900 text-white p-6 text-sm font-[Kanit]" id="about">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 class="font-bold mb-2">About Us</h3>
+            <p>Made by Affan & Faruqi</p>
+            <p class="mt-1">Syiah Kuala University Informatics Students 2025</p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Contact</h3>
+            <ul>
+              <li><a href="mailto:yanuar@example.com">affan@example.com</a></li>
+              <li><a href="mfaruqi23@mhs.usk.ac.id">mfaruqi23@mhs.usk.ac.id</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Made with</h3>
+            <ul>
+              <li>Laravel + TailwindCSS</li>
+              <li>MySQL + Blade</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 text-center border-t border-gray-700 pt-4 text-xs">
+          © 2025 Affan & Faruqi. All rights reserved.
+        </div>
+      </footer>
 </body>
 </html>

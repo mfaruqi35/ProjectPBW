@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -13,64 +12,64 @@
 }
 
 @font-face {
-    font-family: 'Lato';
+    font-family: "Lato";
     src: url(/public/assets/fonts/Lato/Lato-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Lato';
+    font-family: "Lato";
     src: url(/public/assets/fonts/Lato/Lato-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kanit';
+    font-family: "Kanit";
     src: url(/public/assets/fonts/Kanit/Kanit-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kanit';
+    font-family: "Kanit";
     src: url(/public/assets/fonts/Kanit/Kanit-Medium.ttf);
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kanit';
+    font-family: "Kanit";
     src: url(/public/assets/fonts/Kanit/Kanit-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kanit';
+    font-family: "Kanit";
     src: url(/public/assets/fonts/Kanit/Kanit-Light.ttf);
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kanit';
+    font-family: "Kanit";
     src: url(/public/assets/fonts/Kanit/Kanit-ExtraLight.ttf);
     font-weight: 200;
     font-style: normal;
 }
 
-.btn-mulai{
-    font-family: 'Kanit';
+.btn-mulai {
+    font-family: "Kanit";
     font-size: 18px;
-    color: #1868DB;
+    color: #1868db;
     text-transform: uppercase;
     display: inline-block;
     text-align: center;
     font-weight: bold;
     padding: 0.7rem 2rem;
-    border: 3px solid #1868DB;
+    border: 3px solid #1868db;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -79,30 +78,32 @@
     z-index: 1;
 }
 
-.btn-mulai:before{
+.btn-mulai:before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
     left: 50%;
-    right:50%;
+    right: 50%;
     bottom: 0;
     opacity: 0;
-    content: '';
-    background-color: #1868DB;
+    content: "";
+    background-color: #1868db;
     z-index: -1;
 }
 
-.btn-mulai:hover, .btn-mulai:focus{
+.btn-mulai:hover,
+.btn-mulai:focus {
     color: white;
 }
 
-.btn-mulai:hover:before, .btn-mulai:focus:before{
+.btn-mulai:hover:before,
+.btn-mulai:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
 }
 
-.btn-mulai:active{
+.btn-mulai:active {
     transform: scale(0.9);
 }
