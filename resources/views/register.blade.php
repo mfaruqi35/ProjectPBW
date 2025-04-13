@@ -26,7 +26,7 @@
                     <a href="{{ route('home') }}" class="text-white">Sign up</a>
                 </button>
             </form>
-            <h1 class="text-[15px] font-300">Or continue witht:</h1>
+            <h1 class="text-[15px] font-300">Or continue with:</h1>
             <div class="gap-2 flex flex-col py-4">
                     <button class="border-1 rounded-sm w-[25vw] border-[#8c8c8c] h-[6vh] p-1 flex justify-center items-center gap-x-1 hover:bg-[#ececec] duration-[0.1s] focus:outline-2 focus:outline-[#1868DB]">
                         <span><img src="/Google.png" alt="" width="20" height="16"></span>
