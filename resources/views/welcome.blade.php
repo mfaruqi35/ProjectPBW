@@ -50,19 +50,19 @@
             </div>
             <div class="py-5 px-3 flex flex-row justify-center gap-5 h-full flex-1">
                 <div class="border-1 border-gray-300 group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300">
-                    <h1 class="font-[Kanit] font-medium text-xl">Task Management</h1>
-                    <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Effortlessly organize and prioritize tasks for seamless project execution.</p>
-                    <img src="assets/fitur1.png" alt="">
+                    <h1 class="font-[Kanit] font-medium text-xl">Smart Notes</h1>
+                    <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Organize your thoughts, ideas, and plans in one place with clean and simple notes.</p>
+                    <img src="assets/feature_note.png" alt="">
                 </div>
                 <div class="border-1 border-gray-300  group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300">
                     <h1 class="font-[Kanit] font-medium text-xl">Collaboration Tools</h1>
                     <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Enhance teamwork and communication with powerful collaboration features.</p>
-                    <img src="assets/fitur2.png" alt="">
+                    <img src="assets/feature_team.png" alt="">
                 </div>
                 <div class="border-1 border-gray-300 group w-[30vw] h-full shadow-md rounded-2xl bg-white p-6 hover:shadow-2xl hover:-translate-y-1 transition transform duration-300 flex flex-col">
                     <h1 class="font-[Kanit] font-medium text-xl">Project Tracking</h1>
                     <p class="text-gray-600 py-1 font-[Kanit] font-light opacity-0 group-hover:opacity-100 transition">Track progress, milestones, and deadlines with precision for successful project management.</p>
-                    <img src="assets/project-tracking.png" alt="">
+                    <img src="assets/feature_todo.png" alt="">
                 </div>
             </div>
         </div>
