@@ -22,7 +22,7 @@
             </form>
             <form action="" class="pb-[1rem]">
                 <button class=" rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB]">
-                    <a href="{{ route('home') }}" class="text-[#fff]">Continue</a>
+                    <a href="{{ route('welcome') }}" class="text-[#fff]">Continue</a>
                 </button>
             </form>
             <h1 class="text-[15px] font-300">Or continue with:</h1>

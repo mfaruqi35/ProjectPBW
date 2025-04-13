@@ -8,10 +8,8 @@ use App\Http\Controllers\ScheduleController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
