@@ -6,38 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
 </head>
+
 <body class="flex flex-col bg-[#F1F2F4]">
-    <header class="bg-white grid grid-rows-1 grid-cols-3 shadow-2xl fixed w-full z-999 px-5">
+
+    <header class="bg-white grid grid-rows-1 grid-cols-3 shadow-2xl fixed w-full z-999 p-7">
+
         <div class="flex items-center">
             <h1 class="font-[Kanit] font-bold text-[3rem] text-[#1868DB]">Notudo</h1>
         </div>
+
         <div class="flex justify-center items-center gap-20">
             <a href="#features">
-                <h1 class="font-[Kanit] font-light text-[20px] text-black">Features</h1>
+                <h1 class="font-[Kanit] font-light text-[25px] transition duration-300 ease-in-out hover:bg-gray-700 hover:text-white text-black p-3 rounded-3xl  ">Features</h1>
             </a>
             <a href="#about">
-                <h1 class="font-[Kanit] font-light text-[20px] text-black">About</h1>
+                <h1 class="font-[Kanit] font-light text-[25px] transition duration-300 ease-in-out hover:bg-gray-700 hover:text-white text-black p-3 rounded-3xl">About</h1>
             </a>
         </div>
+
         <div class="flex items-center justify-end">
             <a href="{{ route('login') }}">
-                <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db]">Sign In</button>
+                <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db] cursor-pointer">Sign In</button>
             </a>
         </div>
     </header>
+
     <section>
         <div class="absolute bg-[url(/public/assets/banner4.jpg)] h-[80vh] w-full z-[-1] bg-center bg-no-repeat opacity-30">
         </div>
-        <div class="grid grid-cols-1 grid-rows-1">
+        <div class="grid grid-cols-1 grid-rows-1 gap-10px">
             <div class="h-[80vh] flex justify-center flex-col items-center gap-3">
-                <div class="text-5xl">
+                <div class="text-7xl">
                     <h1 class="font-[Kanit]">Welcome to <span class="font-[Kanit] font-bold text-[#1868DB]">Notudo</span></h1>
                 </div>
-                <div class="w-[30vw] text-center">
+                <div class="w-[30vw] text-center text-2xl">
                     <h1 class="font-[Kanit] font-light">Simplify your project with style and ease.</h1>
                 </div>
                 <a href="{{ route('register') }}">
-                    <button class="btn-mulai">
+                    <button class="btn-mulai cursor-pointer">
                         Get Started
                     </button>
                 </a>
@@ -45,7 +51,7 @@
         </div>
       <div class="h-[80vh]" id="features">
         <div class="flex w-full h-[70vh] p-1 pt-5 flex-col">
-            <div class="h-[15vh] w-full py-5 px-10 flex justify-center">
+            <div class="h-[15vh] w-full py-5 px-10 flex items-center justify-center">
                 <h1 class="font-[Kanit] font-bold text-4xl">What You Can Do with <span class="text-[#1868DB]">Notudo</span></h1>
             </div>
             <div class="py-5 px-3 flex flex-row justify-center gap-5 h-full flex-1">
