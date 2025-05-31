@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,104 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(/public/assets/fonts/Lato/Lato-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(/public/assets/fonts/Lato/Lato-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url(/public/assets/fonts/Kanit/Kanit-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url(/public/assets/fonts/Kanit/Kanit-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url(/public/assets/fonts/Kanit/Kanit-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url(/public/assets/fonts/Kanit/Kanit-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url(/public/assets/fonts/Kanit/Kanit-ExtraLight.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+.btn-mulai {
+    font-family: "Kanit";
+    font-size: 18px;
+    color: #1868db;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7rem 2rem;
+    border: 3px solid #1868db;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.btn-mulai:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #1868db;
+    z-index: -1;
+}
+
+.btn-mulai:hover,
+.btn-mulai:focus {
+    color: white;
+}
+
+.btn-mulai:hover:before,
+.btn-mulai:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.btn-mulai:active {
+    transform: scale(0.9);
 }
