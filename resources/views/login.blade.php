@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5KwQ/BMPRjW7tz8J6pgep/brh" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="w-screen h-screen bg-[url(/assets/background.png)] flex justify-center items-center">
+    <div class="w-screen h-screen bg-[url(/public/assets/background.png)] flex justify-center items-center">
         <div class="shadow-lg p-20 rounded-3xl flex justify-center items-center flex-col bg-white relative">
 
         <div class="absolute top-[80px] left-[80px] cursor-pointer">
