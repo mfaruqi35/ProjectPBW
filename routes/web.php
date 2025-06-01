@@ -18,7 +18,7 @@ use App\Http\Controllers\Auth\RegisterController;
 // Route untuk halaman utama (welcome)
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home'); // Tambahkan nama route 'home' agar bisa diakses dari link kembali
 
 // --- Route Register ---
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');

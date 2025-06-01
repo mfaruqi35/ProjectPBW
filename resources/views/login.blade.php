@@ -12,11 +12,12 @@
     <div class="w-screen h-screen bg-[url(/assets/background.png)] flex justify-center items-center">
         <div class="shadow-lg p-20 rounded-3xl flex justify-center items-center flex-col bg-white relative">
 
-            <div class="absolute top-[80px] left-[80px] cursor-pointer">
-                <a href="/">
-                    <i class="fas fa-arrow-left text-gray-500 hover:text-gray-700 text-3xl"></i>
-                </a>
-            </div>
+        <div class="absolute top-[80px] left-[80px] cursor-pointer">
+            <a href="{{ route('home') }}"> {{-- Menggunakan route name --}}
+                <img class="w-[3rem] h-[3rem]" src="/assets/arrow-left-solid.svg"> {{-- Perbaikan jalur gambar --}}
+                {{-- Atau jika ingin pakai Font Awesome: <i class="fas fa-arrow-left text-gray-500 hover:text-gray-700 text-3xl"></i> --}}
+            </a>
+        </div>
 
             <div class="flex flex-col">
                 <h1 class="font-bold text-[3.5rem] text-center font-[Kanit] text-[#1868DB]">Notudo</h1>
@@ -24,7 +25,7 @@
             </div>
 
             @if ($errors->any())
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 w-full" role="alert">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -33,33 +34,47 @@
                 </div>
             @endif
 
-            <div class="flex flex-col gap-5 mb-5 w-full">
-                {{-- Form Login Utama --}}
-                <form action="{{ route('login') }}" method="POST" class="pb-[1rem] w-full">
-                    @csrf {{-- **PENTING: CSRF Token untuk keamanan** --}}
+            <div class="flex flex-col gap-5 mb-5 w-full"> {{-- Menambah w-full untuk konsistensi --}}
+                {{-- **Ini adalah SATU form untuk seluruh proses login** --}}
+                <form action="{{ route('login') }}" method="POST" class="w-full">
+                    @csrf {{-- **Penting: CSRF Token** --}}
 
-                    <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                           class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 focus:border-b-1 focus:border-[#1868DB] focus:outline-none @error('email')  @enderror"
-                           placeholder="Email">
-                    @error('email')
-                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
-                    @enderror
+                    <div class="pb-[1rem]"> {{-- Container untuk input email --}}
+                        <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                               class="
+                                    border-b border-[#8c8c8c]
+                                    rounded-sm w-[25vw] h-[6vh] p-2
+                                    focus:border-b-2 focus:border-[#1868DB] focus:outline-none
+                                    @error('email') border-b-red-500 @else border-b-[#8c8c8c] @enderror
+                               "
+                               placeholder="Email">
+                        @error('email')
+                            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                        @enderror
+                    </div>
 
-                    <input type="password" name="password" required autocomplete="current-password"
-                           class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 mt-5 focus:border-b-1 focus:border-[#1868DB] focus:outline-none @error('password') @enderror"
-                           placeholder="Password">
-                    @error('password')
-                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
-                    @enderror
+                    <div class="pb-[1rem]"> {{-- Container untuk input password --}}
+                        <input type="password" name="password" required autocomplete="current-password"
+                               class="
+                                    border-b border-[#8c8c8c]
+                                    rounded-sm w-[25vw] h-[6vh] p-2 mt-5 {{-- Tambah mt-5 sesuai layout Anda --}}
+                                    focus:border-b-2 focus:border-[#1868DB] focus:outline-none
+                                    @error('password') border-b-red-500 @else border-b-[#8c8c8c] @enderror
+                               "
+                               placeholder="Password">
+                        @error('password')
+                            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                        @enderror
+                    </div>
 
-                    {{-- Tombol Login --}}
+                    {{-- **Tombol Submit Form Login** --}}
                     <button type="submit" class="rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB] cursor-pointer text-[#fff] flex items-center justify-center mt-5">
                         Continue
                     </button>
                 </form>
             </div>
 
-            <a href="{{ route('register') }}" class="w-[25vw] flex justify-end">
+            <a href="{{ route('register') }}" class="w-[25vw] flex justify-end"> {{-- Menggunakan route name --}}
                 <h1 class="font-semibold hover:underline text-sky-600 text-1xl text-left">New here? Register</h1>
             </a>
         </div>
