@@ -9,7 +9,14 @@
 </head>
 <body>
     <div class="w-screen h-screen bg-[url(/public/assets/background.png)] flex justify-center items-center">
-        <div class="shadow-lg p-20 rounded-3xl flex justify-center items-center flex-col bg-white">
+        <div class="shadow-lg p-20 rounded-3xl flex justify-center items-center flex-col bg-white relative">
+
+        <div class="absolute top-[80px] left-[80px] cursor-pointer">
+            <a href="/">
+                <img class="w-[3rem] h-[3rem]" src="assets/arrow-left-solid.svg">
+            </a>
+        </div>
+
             <div class="flex flex-col">
                 <h1 class="font-bold text-[3.5rem] text-center font-[Kanit] text-[#1868DB]">Notudo</h1>
                 <p class="pb-[1.5rem] text-center">Log in to continue</p>
@@ -26,9 +33,9 @@
                 </form>
 
                 <form action="" class="pb-[1rem]">
-                    <button class=" rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB] cursor-pointer">
-                        <a href="/dashboard" class="text-[#fff]">Continue</a>
-                    </button>
+                <a href="/dashboard" class="rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB] cursor-pointer text-[#fff] flex items-center justify-center">
+    Continue
+</a>
                 </form>
             </div>
             
