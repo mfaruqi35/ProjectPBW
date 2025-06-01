@@ -5,41 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Notudo Login</title>
-    @vite('resources/css/app.css')  
+    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5KwQ/BMPRjW7tz8J6pgep/brh" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="w-screen h-screen bg-[url(/public/assets/background.png)] flex justify-center items-center">
+    <div class="w-screen h-screen bg-[url(/assets/background.png)] flex justify-center items-center">
         <div class="shadow-lg p-20 rounded-3xl flex justify-center items-center flex-col bg-white relative">
 
-        <div class="absolute top-[80px] left-[80px] cursor-pointer">
-            <a href="/">
-                <img class="w-[3rem] h-[3rem]" src="assets/arrow-left-solid.svg">
-            </a>
-        </div>
+            <div class="absolute top-[80px] left-[80px] cursor-pointer">
+                <a href="/">
+                    <i class="fas fa-arrow-left text-gray-500 hover:text-gray-700 text-3xl"></i>
+                </a>
+            </div>
 
             <div class="flex flex-col">
                 <h1 class="font-bold text-[3.5rem] text-center font-[Kanit] text-[#1868DB]">Notudo</h1>
                 <p class="pb-[1.5rem] text-center">Log in to continue</p>
             </div>
 
-            <div class="flex flex-col gap-5 mb-5">
+            @if ($errors->any())
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-                <form action="" class="pb-[1rem]">
-                <input type="email" class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 focus:border-b-1 focus:border-[#1868DB] focus:outline-none" placeholder="Email" >
-                </form>
+            <div class="flex flex-col gap-5 mb-5 w-full">
+                {{-- Form Login Utama --}}
+                <form action="{{ route('login') }}" method="POST" class="pb-[1rem] w-full">
+                    @csrf {{-- **PENTING: CSRF Token untuk keamanan** --}}
 
-                <form action="" class="pb-[1rem]">
-                    <input type="password" class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 focus:border-b-1 focus:border-[#1868DB] focus:outline-none" placeholder="Password" minlength={18}>
-                </form>
+                    <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                           class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 focus:border-b-1 focus:border-[#1868DB] focus:outline-none @error('email')  @enderror"
+                           placeholder="Email">
+                    @error('email')
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
 
-                <form action="" class="pb-[1rem]">
-                <a href="/dashboard" class="rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB] cursor-pointer text-[#fff] flex items-center justify-center">
-    Continue
-</a>
+                    <input type="password" name="password" required autocomplete="current-password"
+                           class="border-b-1 border-[#8c8c8c] rounded-sm w-[25vw] h-[6vh] p-2 mt-5 focus:border-b-1 focus:border-[#1868DB] focus:outline-none @error('password') @enderror"
+                           placeholder="Password">
+                    @error('password')
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
+
+                    {{-- Tombol Login --}}
+                    <button type="submit" class="rounded-sm bg-[#1868DB] hover:bg-[#2518db] duration-[0.1s] w-[25vw] h-[6vh] focus:outline-2 focus:outline-offset-2 focus:outline-[#1868DB] cursor-pointer text-[#fff] flex items-center justify-center mt-5">
+                        Continue
+                    </button>
                 </form>
             </div>
-            
-            <a href="/register" class="w-[25vw] flex justify-end">
+
+            <a href="{{ route('register') }}" class="w-[25vw] flex justify-end">
                 <h1 class="font-semibold hover:underline text-sky-600 text-1xl text-left">New here? Register</h1>
             </a>
         </div>
