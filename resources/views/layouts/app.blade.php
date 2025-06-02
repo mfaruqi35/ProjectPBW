@@ -32,7 +32,7 @@
 
         .sidebar {
             width: 250px;
-            background-color: #343a40;
+            background-color: #091E42;
             color: white;
             flex-shrink: 0;
             display: flex;
@@ -104,13 +104,9 @@
 
 <body>
     <div class="sidebar d-flex flex-column p-3">
-        <h4 class="mb-4 text-center">
-            <a href="{{ route('dashboard') }}">
-                <img style=" filter: invert(100%) brightness(200%);"
-                    src="{{ asset('assets/img/logo-circle-horizontal.png') }}" class="img-fluid" width="100%"
-                    alt="task manager">
-            </a>
-        </h4>
+        <h1 class="mb-4 text-center">
+            Notudo
+        </h1>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('dashboard') }}">
@@ -196,8 +192,8 @@
         </main>
         <footer class="mt-auto py-3 text-center">
             <div class="container">
-                <span class="text-muted">&copy; {{ date('Y') }} Task Manager | Developed by <a
-                        href="https://github.com/arafat-web" target="_blank">Arafat Hossain Ar</a> </span>
+                <span class="text-muted">&copy; {{ date('Y') }} Notudo | Developed by <a
+                        href="https://github.com/mfaruqi35/ProjectPBW" target="_blank">Affan Suhendar & Muhammad Faruqi</a> </span>
             </div>
         </footer>
     </div>
