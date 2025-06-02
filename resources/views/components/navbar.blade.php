@@ -1,17 +1,16 @@
-<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 
 <nav>
-
     <div class="Logo">
-        <img src="{{ asset('Logo/TanpaNama.png') }}" alt="Logo" style="height: 50px;">
-        <h1>Notudo</h1>
+        <button>
+            <img src="{{ asset('assets/notudo.png') }}" alt="notudo">
+        </button>
+        <h1 class="font-[Kanit] font-bold text-[5vh] text-[#fff]">Notudo</h1>
         
     </div>
 
     <div class="Second-Logo">
-        <img class="Icon" src="{{ asset('image/surat.png') }}" alt="Logo" >
-        <img class="Icon" src="{{ asset('image/profile.png') }}" alt="Logo"
-       >
+        <img class="Icon" src="{{ asset('assets/surat.png') }}" alt="notif" >
+        <img class="Icon" src="{{ asset('assets/profile.png') }}" alt="profile">
     </div>
     
 </nav>

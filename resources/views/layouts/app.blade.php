@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>My Website</title>
-    <link rel="stylesheet" href="/css/style.css">
+    @vite('resources/css/app.css')
 </head>
 <body>
     <x-navbar />
     <x-aside />
     
-    <x-content />
+    <div>
+        @yield('content')
+    </div>
     
 </body>
 </html>

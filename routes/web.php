@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/notudo', function() {
         return view('pages.Notudo'); // Mengarahkan ke resources/views/pages/Notudo.blade.php
     })->name('notudo'); // Memberi nama route 'notudo'
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('notes', NoteController::class);
 });
 
 // --- Route Logout ---

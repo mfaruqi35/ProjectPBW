@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Note;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -44,5 +45,19 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function note(){
+        return $this->hasMany(Note::class);
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class. 'team_user')->withPivot('role')->withTimestamps();
+    }
+
+    public function ownedTeams()
+    {
+        return $this->hasMany(Team::class, 'creator_id');
     }
 }

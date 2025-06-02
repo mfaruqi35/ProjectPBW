@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Primary-Color: #091e42;
+    --Second-Color: #072e6d;
+    --Third-Color: #0c4db6;
+}

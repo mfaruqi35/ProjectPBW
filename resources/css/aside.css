@@ -1,14 +1,13 @@
 aside {
     width: 300px;
     height: 90vh;
-    position: fixed;
-    background: linear-gradient(to bottom, var(--Second-Color), var(--Third-Color));
+    position: relative;
     padding-top: 30px;
-
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 15px;
+    border: 1px solid;
 }
 
 #Anomali {
@@ -22,7 +21,7 @@ aside {
     transition: all 0.3s ease;
 }
 
-aside svg{
+aside svg {
     height: 60%;
     margin-right: 20px;
     margin-left: 40px;
@@ -41,7 +40,6 @@ aside svg{
     align-items: center;
 }
 
-.Link:hover{
+.Link:hover {
     border: 3px solid white;
 }
-

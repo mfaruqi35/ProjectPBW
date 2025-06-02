@@ -9,7 +9,7 @@
 
 <body class="flex flex-col bg-[#F1F2F4]">
 
-    <header class="bg-white grid grid-rows-1 grid-cols-3 shadow-2xl fixed w-full z-999 p-7">
+    <header class="bg-white grid grid-rows-1 grid-cols-3 shadow-2xl fixed w-full z-999 p-10 h-[10vh]">
 
         <div class="flex items-center">
             <h1 class="font-[Kanit] font-bold text-[3rem] text-[#1868DB]">Notudo</h1>
