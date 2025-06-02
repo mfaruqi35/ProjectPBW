@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,52 +10,51 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
         'password',
+        'phone',
+        'position',
+        'skills',
+        'avatar',
+        'is_online',
+        'last_activity',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'skills' => 'array',
+        'is_online' => 'boolean',
+        'last_activity' => 'datetime',
+    ];
+
+    // Relationships
+    public function ownedTeams()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasMany(Team::class, 'owner_id');
     }
 
-   
-    /**
-     * Get the tasks assigned to the user.
-     */
-    public function assignedTasks()
+    public function teams()
     {
-        return $this->hasMany(Task::class, 'user_id');
+        return $this->belongsToMany(Team::class, 'team_members');
     }
 
-    public function projects()
-{
-    return $this->hasMany(Project::class);
-}
+    public function teamMemberships()
+    {
+        return $this->hasMany(TeamMember::class);
+    }
 
+    // Accessors
+    public function getInitialsAttribute()
+    {
+        $words = explode(' ', $this->name);
+        return strtoupper(substr($words[0], 0, 1) . (isset($words[1]) ? substr($words[1], 0, 1) : ''));
+    }
 }
