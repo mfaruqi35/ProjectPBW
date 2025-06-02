@@ -25,10 +25,16 @@
         </div>
 
         <div class="flex items-center justify-end">
-            <a href="{{ route('login') }}">
-                <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db] cursor-pointer">Sign In</button>
-            </a>
-        </div>
+    @auth
+        <a href="{{ route('login') }}">
+            <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db] cursor-pointer">Sign In</button>
+        </a>
+    @else
+        <a href="{{ route('login') }}">
+            <button class="rounded-md w-[8vw] h-[5vh] bg-[#1868DB] text-white font-[Kanit] font-light hover:bg-[#1846db] cursor-pointer">Sign In</button>
+        </a>
+    @endauth
+</div>
     </header>
 
     <section>
@@ -43,10 +49,10 @@
                     <h1 class="font-[Kanit] font-light">Simplify your project with style and ease.</h1>
                 </div>
                 <a href="{{ route('register') }}">
-                    <button class="btn-mulai cursor-pointer">
-                        Get Started
-                    </button>
-                </a>
+    <button class="btn-mulai cursor-pointer">
+        Get Started
+    </button>
+</a>
             </div>
         </div>
       <div class="h-[80vh]" id="features">
