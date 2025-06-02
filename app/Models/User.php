@@ -45,14 +45,7 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Get the projects for the user.
-     */
-    public function projects()
-    {
-        return $this->hasMany(Project::class);
-    }
-
+   
     /**
      * Get the tasks assigned to the user.
      */
@@ -60,4 +53,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class, 'user_id');
     }
+
+    public function projects()
+{
+    return $this->hasMany(Project::class);
+}
+
 }

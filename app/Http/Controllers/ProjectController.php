@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers; // Pastikan namespace ini benar
+// app/Http/Controllers/ProjectController.php
 
-use App\Http\Controllers\Controller; // <-- TAMBAHKAN BARIS INI
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller; // <--- PASTIKAN INI ADA
 use App\Models\Project;
-use App\Models\User; // To get users for assigning tasks
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -13,29 +15,20 @@ class ProjectController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('Auth'); // Ensure user is authenticated for all project actions
+        $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the user's projects.
-     */
     public function index()
     {
         $projects = Auth::user()->projects()->latest()->get();
-    return view('projects.index', compact('projects')); //
+        return view('projects.index', compact('projects'));
     }
 
-    /**
-     * Show the form for creating a new project.
-     */
     public function create()
     {
         return view('projects.create');
     }
 
-    /**
-     * Store a newly created project in storage.
-     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -57,24 +50,17 @@ class ProjectController extends Controller
         return redirect()->route('projects.index')->with('success', 'Project created successfully!');
     }
 
-    /**
-     * Display the specified project (the board view).
-     */
     public function show(Project $project)
     {
-        // Ensure the authenticated user owns this project
         if (Auth::id() !== $project->user_id) {
             abort(403, 'Unauthorized action.');
         }
 
-        $project->load('lists.tasks.assignee'); // Eager load lists and tasks, and assignee for tasks
-        $users = User::all(); // Get all users for task assignment dropdown
+        $project->load('lists.tasks.assignee');
+        $users = User::all();
         return view('projects.show', compact('project', 'users'));
     }
 
-    /**
-     * Show the form for editing the specified project.
-     */
     public function edit(Project $project)
     {
         if (Auth::id() !== $project->user_id) {
@@ -83,9 +69,6 @@ class ProjectController extends Controller
         return view('projects.edit', compact('project'));
     }
 
-    /**
-     * Update the specified project in storage.
-     */
     public function update(Request $request, Project $project)
     {
         if (Auth::id() !== $project->user_id) {
@@ -111,9 +94,6 @@ class ProjectController extends Controller
         return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
     }
 
-    /**
-     * Remove the specified project from storage.
-     */
     public function destroy(Project $project)
     {
         if (Auth::id() !== $project->user_id) {

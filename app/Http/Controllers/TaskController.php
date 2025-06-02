@@ -1,7 +1,10 @@
 <?php
 
+// app/Http/Controllers/TaskController.php
+
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller; // <--- PASTIKAN INI ADA
 use App\Models\MyList;
 use App\Models\Task;
 use App\Models\User;
@@ -16,9 +19,6 @@ class TaskController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Store a newly created task in storage.
-     */
     public function store(Request $request, MyList $list)
     {
         if (Auth::id() !== $list->project->user_id) {
@@ -45,15 +45,12 @@ class TaskController extends Controller
             'due_date' => $request->due_date,
             'priority' => $request->priority,
             'user_id' => $request->assignee_id,
-            'order' => $list->tasks()->max('order') + 1, // Simple ordering
+            'order' => $list->tasks()->max('order') + 1,
         ]);
 
         return redirect()->route('projects.show', $list->project)->with('success', 'Task created successfully!');
     }
 
-    /**
-     * Show the form for editing the specified task.
-     */
     public function edit(Task $task)
     {
         if (Auth::id() !== $task->mylist->project->user_id) {
@@ -63,9 +60,6 @@ class TaskController extends Controller
         return view('tasks.edit', compact('task', 'users'));
     }
 
-    /**
-     * Update the specified task in storage.
-     */
     public function update(Request $request, Task $task)
     {
         if (Auth::id() !== $task->mylist->project->user_id) {
@@ -92,16 +86,13 @@ class TaskController extends Controller
             'description' => $request->description,
             'due_date' => $request->due_date,
             'priority' => $request->priority,
-            'completed' => $request->has('completed'), // Check if checkbox is present
+            'completed' => $request->has('completed'),
             'user_id' => $request->assignee_id,
         ]);
 
         return redirect()->route('projects.show', $task->mylist->project)->with('success', 'Task updated successfully!');
     }
 
-    /**
-     * Remove the specified task from storage.
-     */
     public function destroy(Task $task)
     {
         if (Auth::id() !== $task->mylist->project->user_id) {
@@ -112,9 +103,6 @@ class TaskController extends Controller
         return redirect()->back()->with('success', 'Task deleted successfully.');
     }
 
-    /**
-     * Toggle task completion status.
-     */
     public function toggleComplete(Task $task)
     {
         if (Auth::id() !== $task->mylist->project->user_id) {

@@ -1,7 +1,10 @@
 <?php
 
+// app/Http/Controllers/MyListController.php
+
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller; // <--- PASTIKAN INI ADA
 use App\Models\Project;
 use App\Models\MyList;
 use Illuminate\Http\Request;
@@ -15,9 +18,6 @@ class MyListController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Store a newly created list in storage.
-     */
     public function store(Request $request, Project $project)
     {
         if (Auth::id() !== $project->user_id) {
@@ -36,15 +36,12 @@ class MyListController extends Controller
 
         $project->lists()->create([
             'name' => $request->name,
-            'order' => $project->lists()->max('order') + 1, // Simple ordering
+            'order' => $project->lists()->max('order') + 1,
         ]);
 
         return redirect()->route('projects.show', $project)->with('success', 'List created successfully!');
     }
 
-    /**
-     * Update the specified list in storage.
-     */
     public function update(Request $request, MyList $list)
     {
         if (Auth::id() !== $list->project->user_id) {
@@ -64,9 +61,6 @@ class MyListController extends Controller
         return response()->json(['message' => 'List updated successfully!']);
     }
 
-    /**
-     * Remove the specified list from storage.
-     */
     public function destroy(MyList $list)
     {
         if (Auth::id() !== $list->project->user_id) {
